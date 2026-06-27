@@ -366,17 +366,3 @@ This architecture is virtually identical to how a real silicon Control Unit dire
 3. **The Logical VF Bug:** Resetting `VF` to 0 after `8XY1`, `8XY2`, and `8XY3`. The original COSMAC VIP interpreter reset `VF` during these bitwise operations, but the modern SuperChip interpreter does not. Both implementations exist, leading to ROM incompatibility.
 4. **Display Wrapping vs Clipping:** Modern CHIP-8 games assume sprites are clipped at the edges of the screen, not wrapped to the other side.
 5. **The PC Increment Double-Step:** Forgetting that Skip instructions (`3XNN`, `4XNN`) must advance the PC by 2, on top of the standard PC += 2 during the Fetch phase.
-
-# Final Mental Model
-
-You now possess the entire blueprint of instruction decoding. You understand how 16 bits of binary data can represent an endless sequence of logic, mathematics, rendering, and timing. 
-
-To rebuild this from memory:
-1. Fetch 2 bytes, bitwise OR them into a `uint16_t`.
-2. Extract the Most Significant Nibble using `& 0xF000`.
-3. Route to the correct instruction logic via a `switch` statement.
-4. Extract arguments using `& 0x0F00`, `& 0x00F0`, etc.
-5. Mutate the central state struct safely.
-6. Handle `VF` with extreme caution. 
-
-This completes the ultimate guide to the CHIP-8 instruction set architecture.

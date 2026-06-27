@@ -1,0 +1,3 @@
+C:/Users/Aditya/OneDrive/Desktop/Projec/CHIP-8/build/CMakeFiles/chip8.dir
+C:/Users/Aditya/OneDrive/Desktop/Projec/CHIP-8/build/CMakeFiles/edit_cache.dir
+C:/Users/Aditya/OneDrive/Desktop/Projec/CHIP-8/build/CMakeFiles/rebuild_cache.dir
